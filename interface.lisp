@@ -52,7 +52,7 @@
     :items 'nil
     :print-function 'print-search-result
     :accessor search-result-panel-of
-    :selection-callback 'select-search-result))
+    ::action-callback 'select-search-result))
   (:layouts
    (search-files-layout
     capi:column-layout
