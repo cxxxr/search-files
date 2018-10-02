@@ -2,9 +2,8 @@
 
 (defun current-directory ()
   (let ((pathname (current-pathname)))
-    (namestring
-     (make-pathname :directory (pathname-directory pathname)
-                    :host (pathname-host pathname)))))
+    (make-pathname :directory (pathname-directory pathname)
+                   :host (pathname-host pathname))))
 
 (defvar *current-directory* (current-directory))
 
@@ -16,7 +15,7 @@
     :title "Directory"
     :buttons '(:browse-file (:directory t) :ok nil)
     :file-completion t
-    :text *current-directory*
+    :text (namestring *current-directory*)
     :reader directory-input-pane-of)
    (file-type-input-pane
     capi:text-input-pane
